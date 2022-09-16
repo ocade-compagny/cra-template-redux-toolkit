@@ -5,6 +5,15 @@ A ajouter dans ~/.npmrc
 //npm.pkg.github.com/:_authToken=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
 ```
 
+# Install le package
+```
+ npm init @ocade-compagny/template-redux-toolkit@latest
+```
+
+# Installation d'une application react avec cette template
+```
+
+```
 # Template Redux Toolkit
 [Inspiration](https://dmnchzl.medium.com/comment-cr%C3%A9er-un-template-pour-cra-%EF%B8%8F-2ad38421b7b4)
 
