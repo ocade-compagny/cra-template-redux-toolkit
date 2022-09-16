@@ -12,7 +12,7 @@ A ajouter dans ~/.npmrc
 
 # Installation d'une application react avec cette template
 ```
-
+npx create-react-app my-app --template @ocade-compagny/redux-toolkit
 ```
 # Template Redux Toolkit
 [Inspiration](https://dmnchzl.medium.com/comment-cr%C3%A9er-un-template-pour-cra-%EF%B8%8F-2ad38421b7b4)
