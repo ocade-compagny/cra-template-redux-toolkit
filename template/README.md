@@ -1,4 +1,10 @@
 # README du Projet
+A ajouter dans ~/.npmrc
+```
+@ocade-compagny:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=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
+```
+
 # Template Redux Toolkit
 [Inspiration](https://dmnchzl.medium.com/comment-cr%C3%A9er-un-template-pour-cra-%EF%B8%8F-2ad38421b7b4)
 
