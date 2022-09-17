@@ -1,16 +1,13 @@
 {
-  "name": "@ocade-compagny/cra-template-redux-toolkit",
-  "version": "0.1.8",
-  "author": "Ocade System",
+  "name": "application",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "node-sass": "^7.0.3",
-    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
@@ -18,20 +15,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix src/"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ocade-compagny/template-redux-toolkit.git"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ocade-compagny/template-redux-toolkit/issues"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "homepage": "https://github.com/ocade-compagny/template-redux-toolkit#readme",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -72,8 +58,20 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,mdx,css,yaml,yml}": ["prettier --write"]
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "2.7.1"
   }
 }
