@@ -11,7 +11,7 @@ A ajouter dans ~/.npmrc
 ```
 
 # Installation d'une application react avec cette template
-```
+```j
 npx create-react-app my-app --template @ocade-compagny/redux-toolkit
 ```
 # Template Redux Toolkit
