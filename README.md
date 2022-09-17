@@ -30,7 +30,7 @@ npm install prettier eslint-config-prettier eslint-plugin-prettier
   "lint": "eslint --ext .js,.jsx src"
 },
 "eslintConfig": {
-  "extends": ["react-app", "prettier", "prettier/react"],
+  "extends": ["react-app", "prettier"],
   "plugins": ["prettier"]
 }
 ```
@@ -49,7 +49,7 @@ module.exports = {
 Ajouter cette même configuration dans le fichier package.json
 ```
 "eslintConfig": {
-  "extends": ["react-app", "prettier", "prettier/react"],
+  "extends": ["react-app", "prettier"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": [
@@ -148,7 +148,7 @@ Une fois ces changements opérés vous devrez déplacer les dépendances, config
         "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix src/"
       },
       "eslintConfig": {
-        "extends": ["react-app", "prettier", "prettier/react"],
+        "extends": ["react-app", "prettier"],
         "plugins": ["prettier"],
         "rules": {
           "prettier/prettier": [
@@ -205,8 +205,7 @@ Une fois ces changements opérés vous devrez déplacer les dépendances, config
   "eslintConfig": {
     "extends": [
       "react-app",
-      "prettier",
-      "prettier/react"
+      "prettier"
     ],
     "plugins": [
       "prettier"
