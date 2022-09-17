@@ -1,6 +1,6 @@
 {
   "name": "@ocade-compagny/cra-template-redux-toolkit",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": "Ocade System",
   "dependencies": {
     "@testing-library/react": "^13.4.0",
@@ -61,7 +61,9 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{md,mdx,css,yaml,yml}": ["prettier --write"]
+    "*.{md,mdx,css,yaml,yml}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "eslint": "^8.23.1",
