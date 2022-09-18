@@ -20,7 +20,7 @@ npx create-react-app my-app --template @ocade-compagny/redux-toolkit
 `Redux Toolkit` est une template de `create react app`. Elle est utilisée pour initialiser un projet demandant l'implémentation d'un store Redux.
 
 # Extension des composants
-Il est recommandé d'utilser l'extension `.mjs` pour les composants.
+Il est recommandé d'utilser l'extension `.jsx` pour les composants.
 
 # Localisation des Composants
 Les composants sont situés `src/composants/*`
@@ -33,76 +33,7 @@ npm install node-sass
 # Prettifier son code
 Pour garder un code propre, il préférable d'avoir un système permettant d'aider à préttifier son code. C'est ce qui est mis en place dans la template `Redux Toolkit`
 ```
-npm install prettier eslint-config-prettier eslint-plugin-prettier
-```
-
-# Modification dans le fichier package.json 
-```
-"scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "lint": "eslint --ext .js,.jsx src"
-},
-"eslintConfig": {
-  "extends": ["react-app", "prettier", "prettier/react"],
-  "plugins": ["prettier"]
-}
-```
-
-# Création d'un fichier `prettier.config.js` à la racine
-```
-module.exports = {
-  printWidth: 120,
-  singleQuote: true,
-  trailingComma: "none",
-  jsxBracketSameLine: true,
-  arrowParens: "avoid"
-};
-```
-
-Ajouter cette même configuration dans le fichier package.json
-```
-"eslintConfig": {
-  "extends": ["react-app", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": [
-      "warn",
-      {
-        "printWidth": 120,
-        "singleQuote": true,
-        "trailingComma": "none",
-        "jsxBracketSameLine": true,
-        "arrowParens": "avoid"
-      }
-    ]
-  }
-}
-```
-
-# Optimiser avec VS Code
-Il est recommander d'avoir le plugin `Prettier — Code Formatter` pour optimiser son formatage de code.
-
-# Installation de Husky
-Hysky est une library qui permet de eslinter son code au moment de `git commit`
-
-```
-npm install husky lint-staged
-```
-Modifier le fichier `package.json`  et ajouter un fin de fichier:
-```
-"husky": {
-  "hooks": {
-    "pre-commit": "lint-staged"
-  }
-},
-"lint-staged": {
-  "*.{js,jsx}": [
-    "prettier --write",
-    "eslint --fix"
-  ]
-}
+npm run eslint
 ```
 
 # Organisation Structurelle App React (futur dossier template)
@@ -144,128 +75,6 @@ Une fois avoir faire toute la partie graphique de votre template, on peut commen
   +-- template.json
 ```
 
-# Déplacer les dépendances de package.json dans template.json
-Une fois ces changements opérés vous devrez déplacer les dépendances, configurations et scripts (sauf ceux en rapport avec react-scripts) présents dans votre package.json vers le fichier template.json de la manière suivante :
-```json
-{
-    "package": {
-      "dependencies": {
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^14.4.3",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "husky": "^8.0.1",
-        "lint-staged": "^13.0.3",
-        "node-sass": "^7.0.3",
-        "prettier": "^2.7.1"
-      },
-      "scripts": {
-        "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix src/"
-      },
-      "eslintConfig": {
-        "extends": ["react-app", "prettier", "prettier/react"],
-        "plugins": ["prettier"],
-        "rules": {
-          "prettier/prettier": [
-            "warn",
-            {
-              "printWidth": 120,
-              "singleQuote": true,
-              "trailingComma": "none",
-              "jsxBracketSameLine": true,
-              "arrowParens": "avoid"
-            }
-          ]
-        }
-      },
-      "husky": {
-        "hooks": {
-          "pre-commit": "lint-staged"
-        }
-      },
-      "lint-staged": {
-        "*.{js,jsx}": [
-          "prettier --write",
-          "eslint --fix"
-        ]
-      }
-    }
-  }
-```
-
-# Fichier package.json final
-```json
-{
-  "name": "redux-toolkit",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "node-sass": "^7.0.3",
-    "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix src/"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "prettier",
-      "prettier/react"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "warn",
-        {
-          "printWidth": 120,
-          "singleQuote": true,
-          "trailingComma": "none",
-          "jsxBracketSameLine": true,
-          "arrowParens": "avoid"
-        }
-      ]
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  }
-}
-
-```
-
 # Tester que l'installation est correct en local
 ```
 npx create-react-app application --template file:./path/to/cra-template-my-awesome-project
@@ -273,3 +82,28 @@ cd application
 npm run start
 
 ```
+
+# Redux Tookit + React Redux
+### Déclaration du store
+Le code correspondant est dans le fichier `src/composants/Store/store.js`. Dans ce fichier on peut voir la création d'une slice (tranche) puis celle-ci est mise à disposition par le store pour que l'application puisse en bénéficier.
+
+### counterSlice
+counterSlice est une tranche du store. Rendez-vous dans le fichier `src/composants/Store/counterSlice.js`. Dans ce fichier on peut voir la déclaration de la slice. Chaque slice à un état de départ au lancement de l'application. puis des méthodes qui permettant de modifier le state au cours du déroulement de l'application. Dans l'exemple, les méthodes permettent d'incrémenter ou décrémenter l'état de la slice. Les methodes sont mises à disposition par la slice afin d'être utilisé à travers la slice. (Une slice se rapproche du comportement d'une classe).
+
+### Récuupérer les informations de la sliceCounter
+Rendez vous dans le fichier `src/composants/Counter/Counter.jsx`. On peut voir comment récupérer l'état du counter.
+```
+  const count = useSelector((state) => state.counter.value);
+```
+
+### Mettre à jour l'état d'une slice
+Restons dans le même fichier et observons comment l'état du counter est mis à jour.
+* On met à disposition la méthodes permettant de discuter avec le store
+```
+const dispatch = useDispatch();
+```
+* Ensuite on exécute une méthode de la sliceCounter afin que celle-ci dans le coeur de la slice s'exécute.
+```
+onClick={() => dispatch(decrement())}
+```
+* L'état est ensuite mis à jour. On récupère la nouvelle valeur dans notre page web.
