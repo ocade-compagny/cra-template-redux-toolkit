@@ -22,8 +22,9 @@
         "react"
     ],
     "rules": {
-        "indent": ["warn", "tab"],
+        "indent": ["error", 2],
         "quotes": ["error", "single"],
-        "semi": ["error", "always"]
+        "semi": ["error", "always"],
+        "no-console": "off"
     }
 }
