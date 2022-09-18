@@ -16,78 +16,80 @@ L'installation de la library Node Sass permet d'utiliser des fichiers `.scss` di
 npm install node-sass
 ```
 # Prettifier son code
-Pour garder un code propre, il préférable d'avoir un système permettant d'aider à préttifier son code. C'est ce qui est mis en place dans la template `Redux Toolkit`
+[Documentation Prettier](https://www.coffeeclass.io/articles/commit-better-code-with-husky-prettier-eslint-lint-staged)
+Pour garder un code propre, il préférable d'avoir un système permettant d'aider à préttifier son code. C'est ce qui est mis en place dans la template `Redux Toolkit`.<br/>
+Dans le dossier de l'application:
 ```
-npm install prettier eslint-config-prettier eslint-plugin-prettier
+npm install --save-dev --save-exact prettier eslint-config-prettier eslint-plugin-prettier lint-staged
 ```
 
-# Modification dans le fichier package.json 
+# Génération du fichier .eslintrc.json
 ```
-"scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "lint": "eslint --ext .js,.jsx src"
-},
-"eslintConfig": {
-  "extends": ["react-app", "prettier"],
-  "plugins": ["prettier"]
+npm init @eslint/config 
+``` json
+Ajouter au fichier .eslintrc.json
+```
+"rules": {
+    "indent": ["warn", "tab"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
+}
+
+
+et ....
+
+ "extends": [
+      "airbnb-base",
+      "plugin:prettier/recommended"
+  ],
+```
+
+# Ajouter un fichier .prettierrc.json
+```json
+{
+    "tabWidth": 2,
+    "useTabs": true,
+    "printWidth": 80,
+    "semi": true,
+    "trailingComma": "es5",
+    "jsxSingleQuote": true,
+    "singleQuote": true
 }
 ```
 
-# Création d'un fichier `prettier.config.js` à la racine
-```
-module.exports = {
-  printWidth: 120,
-  singleQuote: true,
-  trailingComma: "none",
-  jsxBracketSameLine: true,
-  arrowParens: "avoid"
-};
+# Ajouter un fichier prettier.config.js
+```js
+export const printWidth = 120;
+export const singleQuote = true;
+export const trailingComma = 'none';
+export const jsxBracketSameLine = true;
+export const arrowParens = 'avoid';
 ```
 
-Ajouter cette même configuration dans le fichier package.json
-```
-"eslintConfig": {
-  "extends": ["react-app", "prettier"],
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": [
-      "warn",
-      {
-        "printWidth": 120,
-        "singleQuote": true,
-        "trailingComma": "none",
-        "jsxBracketSameLine": true,
-        "arrowParens": "avoid"
-      }
-    ]
-  }
-}
-```
-
-# Optimiser avec VS Code
-Il est recommander d'avoir le plugin `Prettier — Code Formatter` pour optimiser son formatage de code.
-
-# Installation de Husky
-Hysky est une library qui permet de eslinter son code au moment de `git commit`
-
-```
-npm install husky lint-staged
-```
-Modifier le fichier `package.json`  et ajouter un fin de fichier:
-```
-"husky": {
-  "hooks": {
-    "pre-commit": "lint-staged"
-  }
-},
-"lint-staged": {
-  "*.{js,jsx}": [
-    "prettier --write",
-    "eslint --fix"
+# Ajouter au fichier package.json en bas de fichier
+```json
+"lint-staged":{
+  "**/*.{js,jsx,ts,tsx}":[
+    "npx prettier --write",
+    "npx eslint --fix",
   ]
 }
+```
+
+
+
+# Installation de Husky (à la racine du projet à côté du .git)
+Hysky est une library qui permet de eslinter son code au moment de `git commit`. Vous devez ajout un package.json (si aucun, lancer `npm init -y`)
+
+```
+npx husky-init && npm install husky --save-dev
+```
+Un dossier .hushky est créé. modifier le fichier pre-commit à l'intérieur. pour lancer eslint dans votre application de cette façon ( à adapter avec votre structure).
+```
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+cd application && npx lint-staged
+cd ../server && npx lint-staged
 ```
 
 # Organisation Structurelle App React (futur dossier template)

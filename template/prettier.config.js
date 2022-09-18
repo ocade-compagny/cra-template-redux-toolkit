@@ -1,7 +1,5 @@
-module.exports = {
-    printWidth: 120,
-    singleQuote: true,
-    trailingComma: "none",
-    jsxBracketSameLine: true,
-    arrowParens: "avoid"
-  };
+export const printWidth = 120;
+export const singleQuote = true;
+export const trailingComma = 'none';
+export const jsxBracketSameLine = true;
+export const arrowParens = 'avoid';
