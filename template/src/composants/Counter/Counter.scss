@@ -1,0 +1,20 @@
+.wrapper {
+    background-color: cornflowerblue;
+    padding: 1rem;
+  
+    span {
+      color:white;
+      font-size: 2rem;
+    }
+  
+    button {
+      width:  5rem;
+      height: 5rem;
+      margin: 1rem;
+      border-radius: 100%;
+      
+      span {
+        color: black;
+      }
+    }
+  }
