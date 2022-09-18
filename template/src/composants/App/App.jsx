@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from '../../vectors/logo.svg';
 import './App.scss';
 

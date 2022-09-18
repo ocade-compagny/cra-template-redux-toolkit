@@ -4,17 +4,12 @@
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
         "plugin:react/recommended",
-        "airbnb",
-        "plugin:prettier/recommended"
+        "airbnb"
     ],
     "overrides": [
     ],
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
@@ -22,9 +17,5 @@
         "react"
     ],
     "rules": {
-        "indent": ["error", 2],
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"],
-        "no-console": "off"
     }
 }
