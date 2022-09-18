@@ -107,3 +107,6 @@ const dispatch = useDispatch();
 onClick={() => dispatch(decrement())}
 ```
 * L'état est ensuite mis à jour. On récupère la nouvelle valeur dans notre page web.
+
+### ASTUCES DEV TOOLS
+Il existe une extension de navigateur très pratique lorsqu'on utilise Redux. Elle permet de visualiser très facilement nos données (leurs liens, leur valeurs...). Cette extension s'appelle `Redux devTools`.
