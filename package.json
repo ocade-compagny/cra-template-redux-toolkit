@@ -1,6 +1,6 @@
 {
   "name": "@ocade-compagny/cra-template-redux-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Ocade System",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
