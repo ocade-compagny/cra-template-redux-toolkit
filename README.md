@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./readme/ocade-template-redux-toolkit.png" />
+</p>
+
 # Template Redux Toolkit
 [Inspiration](https://dmnchzl.medium.com/comment-cr%C3%A9er-un-template-pour-cra-%EF%B8%8F-2ad38421b7b4)
 
