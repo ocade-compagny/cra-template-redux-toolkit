@@ -17,7 +17,7 @@ Redux Store c'est un store qui permet de stocker des données dans une applicati
 ## Installation
 
 ```bash
-npx create-react-app my-app --template redux-toolkit
+npx create-react-app my-app --template @ocade-compagny/redux-toolkit
 ```
 
 ## Tips
