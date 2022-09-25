@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="./readme/ocade-template-redux-toolkit.png" />
+  <img src="./readme/ocade-template-redux-toolkit-1.png" />
 </p>
 
 # Template Redux Toolkit
 [Inspiration](https://dmnchzl.medium.com/comment-cr%C3%A9er-un-template-pour-cra-%EF%B8%8F-2ad38421b7b4)
 
-![Redux Toolkit](./redux.jpg)
+![Redux Toolkit](./readme/redux.jpg)
 <br/>
 <br/>
 <br/>
