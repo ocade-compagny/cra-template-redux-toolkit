@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./readme/ocade-template-redux-toolkit-1.png" />
+  <img src="./readme/ocade-template-redux-toolkit-2.png" />
 </p>
 
 # Template Redux Toolkit
@@ -16,3 +16,7 @@
 ```bash
 npx create-react-app my-app --template redux-toolkit
 ```
+
+## Tips
+Pour faciliter le developpement de l'application il est possible d'installer l'extension `Redux DevTools` sur votre navigateur. Cette extension permet de visualiser le store Redux et de voir les actions qui sont dispatchées.
+
