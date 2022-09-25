@@ -11,6 +11,9 @@
 <br/>
 `Redux Toolkit` est une template de `create react app`. Elle est utilisée pour initialiser un projet demandant l'implémentation d'un store Redux.
 
+## Redux Store, c'est quoi ?
+Redux Store c'est un store qui permet de stocker des données dans une application React. Il permet de stocker des données de manière globale dans l'application. Vous avez donc accès à ces données dans n'importe quel composant de votre application. Comment faire ? En utilisant le hook `useSelector` et `useDispatch`. [Voir la documentation](https://redux.js.org/api/store).
+
 ## Installation
 
 ```bash
